@@ -1,0 +1,47 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage[doublespacing]{setspace}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage[hang,bottom,flushmargin]{footmisc}
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{\thepage} 
+\cfoot{} 
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt} 
+\setlength\headsep{0.333in}
+
+\newcommand{\makemybib}{
+    \newpage
+    \begin{center}\textbf{Works Cited}\end{center}
+
+    \setlength{\parindent}{-1em}
+    \setlength{\leftskip}{1em}
+}
+
+\begin{document}
+\begin{flushleft}
+
+$if(author)$$author$\\$endif$
+$if(professor)$Professor $professor$\\$endif$
+$if(class)$$class$\\$endif$
+$if(date)$$date$\\$endif$
+
+$if(title)$
+\begin{center}
+    $title$
+\end{center}
+$endif$
+
+\setlength{\parindent}{0.5in}
+
+$body$
+
+\end{flushleft}
+\end{document}

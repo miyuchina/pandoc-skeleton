@@ -1,0 +1,47 @@
+\documentclass[11pt,letterpaper]{memoir}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{ebgaramond}
+\usepackage[T1]{fontenc}
+\usepackage[hang,bottom,flushmargin]{footmisc}
+\usepackage[breaklinks=true]{hyperref}
+
+\OnehalfSpacing
+\setlength{\footnotemargin}{1em}
+\hypersetup{colorlinks,citecolor=blue,filecolor=blue,linkcolor=blue,urlcolor=blue}
+
+\def \scwords #1 #2 #3 {\textsc{\lowercase{#1 #2 #3}} }
+
+\newcommand{\makemytitle}{
+    \newpage
+    \noindent \textit{\large $title$} \par
+    $if(chapter-name)$
+        \vspace{0.5em}
+        \noindent {\large $chapter-name$}
+    $endif$
+    \vspace{0.5\textheight}
+}
+
+\newcommand{\makemybib}{
+    \newpage
+    \small
+    \noindent \textbf{Works Cited}
+
+    \noindent
+    \setlength{\parindent}{-1em}
+    \setlength{\leftskip}{1em}
+}
+
+\begin{document}
+
+$if(title)$
+\makemytitle
+$endif$
+
+\thispagestyle{empty}
+\noindent
+\scwords
+$body$
+
+\end{document}
